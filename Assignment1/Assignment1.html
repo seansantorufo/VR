@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Hello World</title>
+    <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
+</head>
+    
+<body>
+    
+
+
+<!--Javascript code-->
+<script>
+    //Code that attach to an object
+    AFRAME.registerComponent("bruh",
+    {
+        init: function()
+        {
+            console.log("Init function activated");
+        },
+            
+        tick: function(elapsedTime, deltaTime)
+        {
+            console.log("Tick function activated");
+        }
+        
+    });
+    
+    //Change objects individual elements properties
+    AFRAME.registerComponent( "inspect", 
+    {
+       init: function()
+        {
+            console.log(this.el);
+            
+            this.el.setAttribute("color", "red");
+            
+            console.log(this.el.object3D);
+        },
+        
+        tick: function(t, deltaTime)
+        {
+            let obj = this.el.object3D;
+            
+            obj.position.set(2 * Math.cos(t/5000), 2, 3 * Math.sin(t/5000));
+        }
+        
+    });
+    
+</script>
+    
+    <!--HTML code-->
+    <a-scene background="color: #FAFAFA">
+        
+        <a-asset-item id="arena" src="VR/Assignment1/Azalea_Gym.glb"></a-asset-item>
+
+        <a-entity glb-model="#arena"></a-entity>
+        
+    </a-scene>
+    
+</body>
+    
+</html>
