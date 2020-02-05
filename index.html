@@ -13,21 +13,6 @@
 
 <!--Javascript code-->
 <script>
-    //Code that attach to an object
-    AFRAME.registerComponent("bruh",
-    {
-        init: function()
-        {
-            console.log("Init function activated");
-        },
-            
-        tick: function(elapsedTime, deltaTime)
-        {
-            console.log("Tick function activated");
-        }
-        
-    });
-    
     //Change objects individual elements properties
     AFRAME.registerComponent( "inspect", 
     {
@@ -65,7 +50,7 @@
         <a-entity gltf-model="#poliwag" position="1 0.8 -8.5" scale="1 1 1"></a-entity>
         <a-entity gltf-model="#sandshrew" position="1 0.85 -4" rotation="0 180 0" scale="1 1 1"></a-entity>
         <a-entity gltf-model="#vulpix" position="-1 0.85 -8.5" scale="1 1 1"></a-entity>
-        <a-entity gltf-model="#zubat" position="-1 0.8 -4" rotation="0 180 0" scale="1 1 1"></a-entity>
+        <a-entity gltf-model="#zubat" position="-1 0.8 -4" rotation="0 180 0" scale="1 1 1" animation__float="property: position; from: 0.8; to: 1; dur: 5000; loop:true; dir:alternate;"></a-entity>
         <a-entity gltf-model="#azelea" position="0 3 -15" scale="20 20 20" ></a-entity>
         
         <!--Sky Sphere-->
