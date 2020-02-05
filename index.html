@@ -8,37 +8,10 @@
 </head>
     
 <body>
-    
-
-
-<!--Javascript code-->
-<script>
-    //Change objects individual elements properties
-    AFRAME.registerComponent( "inspect", 
-    {
-       init: function()
-        {
-            console.log(this.el);
-            
-            this.el.setAttribute("color", "red");
-            
-            console.log(this.el.object3D);
-        },
-        
-        tick: function(t, deltaTime)
-        {
-            let obj = this.el.object3D;
-            
-            obj.position.set(2 * Math.cos(t/5000), 2, 3 * Math.sin(t/5000));
-        }
-        
-    });
-    
-</script>
-    
     <!--HTML code-->
     <a-scene background="color: #FAFAFA">
         
+        <!-- Load in assets for pokemon, the stadium, and the sky jpeg-->
         <a-asset-item id="poliwag" src="Poliwag.glb"></a-asset-item>
         <a-asset-item id="sandshrew" src="sandshrew.glb"></a-asset-item>
         <a-asset-item id="vulpix" src="vulpix.glb"></a-asset-item>
@@ -47,11 +20,13 @@
         
         <a-assets><img id="sky" src="sky.jpeg"></a-assets>
         
-        <a-sphere position="1 0.85 -8.5" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 1; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
-        <a-sphere position="1 0.85 -4" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 1; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
-        <a-sphere position="-1 0.85 -8.5" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 1; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
-        <a-sphere position="-1 0.85 -4" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 1; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
-
+        <!-- spheres that grow and dissapear to emulate pokemon being released from their pokeballs-->
+        <a-sphere position="1 0.85 -8.5" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 0.9; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
+        <a-sphere position="1 0.85 -4" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 0.9; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
+        <a-sphere position="-1 0.85 -8.5" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 0.9; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
+        <a-sphere position="-1 0.85 -4" radius="1.25" color="#add8e6" material="transparent: true; opacity: 1;" animation__pulse="property: radius; from: 0.9; to: 3; dur: 3000;" animation__fadeOut="property:material.opacity; from: 1; to: 0; dur: 3000;" shadow></a-sphere>
+        
+        <!-- add pokemon, the stadium, and the sky to the scene-->
         <a-entity gltf-model="#poliwag" position="1 0.8 -8.5" scale="1 1 1"></a-entity>
         <a-entity gltf-model="#sandshrew" position="1 0.85 -4" rotation="0 180 0" scale="1 1 1" ></a-entity>
         <a-entity gltf-model="#vulpix" position="-1 0.85 -8.5" scale="1 1 1" ></a-entity>
