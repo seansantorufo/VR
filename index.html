@@ -10,6 +10,7 @@
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
 
    <a-assets>
+       <a-asset-item id="dragon" src="Winged_Dragon.glb"></a-asset-item>
 		<!-- <img id="grid" src="images/border.png" />
 		<img id="earth-flat" src="images/earth-flat.jpg" />-->
 		<img id="earth-sphere" src="earth-sphere.jpg" />
@@ -19,6 +20,11 @@
         <a-sphere position="0 0.5 0" radius="0.5"
                material="src:#earth-sphere; color: blue; transparent: true; opacity: 0.50;">
         </a-sphere>
+    </a-marker>
+    
+    <a-marker type="pattern" url="Winged_Dragon.patt">
+        <a-entity gltf-model="#dragon" position="0 0.5 0" scale="0.1 0.1 0.1">
+        </a-entity>
     </a-marker>
     
     <a-entity camera></a-entity>
