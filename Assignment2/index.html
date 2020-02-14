@@ -1,0 +1,30 @@
+<!doctype HTML>
+<html>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<body style="margin: 0px; overflow: hidden;">
+  
+<!-- set detectionMode and matrixCodeType to enable barcode marker detection and custom pattern files -->
+
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+
+   <a-assets>
+       <a-asset-item id="dragon" src="Winged_Dragon.glb"></a-asset-item>
+		<!-- <img id="grid" src="images/border.png" />
+		<img id="earth-flat" src="images/earth-flat.jpg" />-->
+		<img id="earth-sphere" src="earth-sphere.jpg" />
+	</a-assets>
+    
+    <a-marker type="pattern" url="kanji.patt">
+        <a-entity gltf-model="#dragon" position="0 0.5 0" scale="2 2 2">
+        </a-entity>
+       <!-- <a-sphere position="0 0.5 0" radius="0.5"
+               material="src:#earth-sphere; color: blue; transparent: true; opacity: 0.50;">
+        </a-sphere>-->
+    </a-marker>
+    <a-entity camera></a-entity>
+    
+</a-scene>
+</body>
+</html>
