@@ -12,17 +12,17 @@
     <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
         
 	<a-assets>
-        <a-asset-item id = "monkey" src = "models/PickingFlowers.gltf"></a-asset-item>
+        <a-asset-item id = "monkey" src = "models/Flowers.glb"></a-asset-item>
         <a-asset-item id = "heart-obj" src = "models/Heart.obj"></a-asset-item>
         <a-asset-item id = "heart-mtl" src = "models/Heart.mtl"></a-asset-item>
  	</a-assets>
         
-        <!-- Monkey Model and Broccoli Marker-->
+        <!-- Monkey Model and F Marker-->
  	<a-marker type = "pattern" url = "markers/pattern-F.patt">
-        <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "3 3 3" gltf-model = "#monkey"></a-entity>
+        <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "0.1 0.1 0.1" gltf-model = "#monkey"></a-entity>
 	</a-marker>
 
-	<!-- Heart Model and Heart Marker-->
+	<!-- Heart Model and L O V E Markers-->
 	<a-marker type = "pattern" url = "markers/pattern-L.patt">
 		<a-entity position = "0 0 1" rotation = "-180 0 0" scale = "0.1 0.1 0.1" obj-model = "obj: #heart-obj; mtl: #heart-mtl"
  		animation__rotate = "property: rotation; dur: 1000; easing: easeInOutSine; dir:alternate; from: -180 0 -45; to: -180 0 45; loop: true;"></a-entity>
